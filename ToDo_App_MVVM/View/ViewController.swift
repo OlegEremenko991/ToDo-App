@@ -12,7 +12,6 @@ import RealmSwift
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var viewModel: ToDoViewModel?
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
