@@ -1,6 +1,6 @@
 # ToDo App
-* I used MVVM pattern to create this app.
-* All created tasks are saved to Realm-database.
+* Realm database
+* MVVM pattern
 
 ### What you can do with this app
 1. Create tasks with "+" button
