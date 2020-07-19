@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6725DAE624C4252E00249DB4 /* DynamicColor in Frameworks */ = {isa = PBXBuildFile; productRef = 6725DAE524C4252E00249DB4 /* DynamicColor */; };
 		67D5FB7F24A263E000F9ED26 /* VC_Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5FB7E24A263E000F9ED26 /* VC_Delegate.swift */; };
 		67F3F2B1249F2E94009B87ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F3F2B0249F2E94009B87ED /* AppDelegate.swift */; };
 		67F3F2B3249F2E94009B87ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F3F2B2249F2E94009B87ED /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F3F2C8249F301E009B87ED /* RealmSwift in Frameworks */,
+				6725DAE624C4252E00249DB4 /* DynamicColor in Frameworks */,
 				67F3F2C6249F301E009B87ED /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +139,7 @@
 			packageProductDependencies = (
 				67F3F2C5249F301E009B87ED /* Realm */,
 				67F3F2C7249F301E009B87ED /* RealmSwift */,
+				6725DAE524C4252E00249DB4 /* DynamicColor */,
 			);
 			productName = ToDo_App_MVVM;
 			productReference = 67F3F2AD249F2E94009B87ED /* ToDo_App_MVVM.app */;
@@ -168,6 +171,7 @@
 			mainGroup = 67F3F2A4249F2E94009B87ED;
 			packageReferences = (
 				67F3F2C4249F301E009B87ED /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				6725DAE424C4252E00249DB4 /* XCRemoteSwiftPackageReference "DynamicColor" */,
 			);
 			productRefGroup = 67F3F2AE249F2E94009B87ED /* Products */;
 			projectDirPath = "";
@@ -403,6 +407,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6725DAE424C4252E00249DB4 /* XCRemoteSwiftPackageReference "DynamicColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yannickl/DynamicColor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		67F3F2C4249F301E009B87ED /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa";
@@ -414,6 +426,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6725DAE524C4252E00249DB4 /* DynamicColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6725DAE424C4252E00249DB4 /* XCRemoteSwiftPackageReference "DynamicColor" */;
+			productName = DynamicColor;
+		};
 		67F3F2C5249F301E009B87ED /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 67F3F2C4249F301E009B87ED /* XCRemoteSwiftPackageReference "realm-cocoa" */;

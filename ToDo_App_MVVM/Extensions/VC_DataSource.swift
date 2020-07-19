@@ -18,6 +18,8 @@ extension ViewController: UITableViewDataSource {
         if let item = viewModel?.toDoItems?[indexPath.row] {
             cell.itemNameLabel.text = item.itemName
             cell.accessoryType = item.done ? .checkmark : .none
+            cell.tintColor = .yellow
+            viewModel?.addGradient(cell: cell, indexPath: indexPath)
         } else {
             cell.itemNameLabel.text = "No tasks added yet"
         }

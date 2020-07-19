@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         viewModel = ToDoViewModel.init()
         viewModel?.view = self
         viewModel?.loadItems()
+        tableView.backgroundColor = .systemIndigo
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
