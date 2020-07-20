@@ -29,9 +29,6 @@ class ToDoViewModel {
         view!.tableView.reloadData()
     }
     
-    let blue = UIColor(hexString: "#3498db")
-    let red = UIColor(hexString: "#e74c3c")
-    let yellow = UIColor(hexString: "#f1c40f")
     
 // MARK: - Adding gradient color to cells
     func addGradient(cell: TableViewCell, indexPath: IndexPath){
