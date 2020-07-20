@@ -42,7 +42,7 @@ class ToDoViewModel {
     
     func addToDoItem(){
         var textField = UITextField()
-        let alert = UIAlertController(title: "Add new task", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add a new task", message: "", preferredStyle: .alert)
         let actionButton = UIAlertAction(title: "Save", style: .default) { action in
             let newItem = ToDoItem()
             newItem.itemName = textField.text!
