@@ -36,7 +36,7 @@ class ToDoViewModel {
 // MARK: - Adding gradient color to cells
     func addGradient(cell: TableViewCell, indexPath: IndexPath){
         let calculation = CGFloat(indexPath.row) / 25
-        if let colour = UIColor.systemIndigo.darkened(amount: calculation) as? UIColor {
+        if let colour = UIColor(hexString: "5E5CE6").darkened(amount: calculation) as? UIColor {
             cell.backgroundColor = colour
         }
     }
