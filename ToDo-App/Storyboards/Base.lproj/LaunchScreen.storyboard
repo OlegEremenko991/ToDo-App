@@ -18,10 +18,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4l-Po-fvB">
                                 <rect key="frame" x="112" y="423.5" width="190" height="49"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="41"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="K4l-Po-fvB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8Jq-k6-Vji"/>
                             <constraint firstItem="K4l-Po-fvB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="TE6-yF-jVf"/>
@@ -31,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="129" y="242"/>
         </scene>
     </scenes>
 </document>

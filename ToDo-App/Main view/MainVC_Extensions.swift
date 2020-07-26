@@ -30,7 +30,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
             cell.tintColor = .yellow
             
             if indexPath.section == 0 {
-                viewModel?.addGradient(cell: cell, indexPath: indexPath, color: UIColor(hexString: "5E5CE6"))
+                viewModel?.addGradient(cell: cell, indexPath: indexPath, color: .systemIndigo)
             } else {
                 viewModel?.addGradient(cell: cell, indexPath: indexPath, color: .blue)
             }
