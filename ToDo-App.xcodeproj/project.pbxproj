@@ -65,7 +65,6 @@
 			children = (
 				67F3F2AF249F2E94009B87ED /* ToDo-App */,
 				67F3F2AE249F2E94009B87ED /* Products */,
-				99628FCE446FECE7A11AC233 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,13 +107,6 @@
 				67F3F2C9249F3276009B87ED /* TableViewCell.swift */,
 			);
 			path = "Main view";
-			sourceTree = "<group>";
-		};
-		99628FCE446FECE7A11AC233 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
