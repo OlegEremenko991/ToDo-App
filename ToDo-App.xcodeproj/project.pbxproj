@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		33836DA5B9B9D1D4CA5A6AF5 /* Pods_ToDo_App_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDo_App_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		67F3F2AD249F2E94009B87ED /* ToDo_App_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo_App_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F3F2AD249F2E94009B87ED /* ToDo-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F3F2B0249F2E94009B87ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F3F2B2249F2E94009B87ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		67F3F2B4249F2E94009B87ED /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		67F3F2AE249F2E94009B87ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				67F3F2AD249F2E94009B87ED /* ToDo_App_MVVM.app */,
+				67F3F2AD249F2E94009B87ED /* ToDo-App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 			);
 			name = ToDo_App_MVVM;
 			productName = ToDo_App_MVVM;
-			productReference = 67F3F2AD249F2E94009B87ED /* ToDo_App_MVVM.app */;
+			productReference = 67F3F2AD249F2E94009B87ED /* ToDo-App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -164,7 +164,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 67F3F2A8249F2E94009B87ED /* Build configuration list for PBXProject "ToDo_App_MVVM" */;
+			buildConfigurationList = 67F3F2A8249F2E94009B87ED /* Build configuration list for PBXProject "ToDo-App" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -402,7 +402,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oleg991.ToDo-App-MVVM";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ToDo-App";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -422,7 +422,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oleg991.ToDo-App-MVVM";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ToDo-App";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -431,7 +431,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		67F3F2A8249F2E94009B87ED /* Build configuration list for PBXProject "ToDo_App_MVVM" */ = {
+		67F3F2A8249F2E94009B87ED /* Build configuration list for PBXProject "ToDo-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				67F3F2BF249F2E97009B87ED /* Debug */,

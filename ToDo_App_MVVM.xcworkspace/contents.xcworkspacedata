@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ToDo_App_MVVM.xcodeproj">
+      location = "group:/Users/oleg991/Downloads/Study iOS/ToDo_App_MVVM/ToDo-App.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
