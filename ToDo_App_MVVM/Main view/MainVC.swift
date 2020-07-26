@@ -8,19 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var viewModel: ToDoViewModel?
+    
+    var viewModel: MainViewModel?
+    
+    let tableViewSections = ["Active", "Completed"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ToDoViewModel.init()
-        viewModel?.view = self
-        viewModel?.loadItems()
+        setupViewModel()
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         viewModel?.addToDoItem()
+    }
+    
+    private func setupViewModel(){
+        viewModel = MainViewModel.init()
+        viewModel?.view = self
+        viewModel?.loadItems()
     }
 }
 

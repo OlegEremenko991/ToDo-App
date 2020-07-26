@@ -10,11 +10,11 @@ import UIKit
 import RealmSwift
 import DynamicColor
 
-class ToDoViewModel {
+class MainViewModel {
     let realm = try! Realm()
     var toDoItems: Results<ToDoItem>?
     
-    weak var view: ViewController?
+    weak var view: MainVC?
     
 // MARK: - Methods to load and save items
     func loadItems() {
@@ -29,12 +29,45 @@ class ToDoViewModel {
         view!.tableView.reloadData()
     }
     
+// MARK: Get an array of active items
+    func activeItems() -> Results<ToDoItem> {
+        toDoItems = realm.objects(ToDoItem.self).filter("done = false").sorted(byKeyPath: "itemName",ascending: true)
+        return toDoItems!
+    }
     
-// MARK: - Adding gradient color to cells
-    func addGradient(cell: TableViewCell, indexPath: IndexPath){
+// MARK: Get an array of completed items
+    func completedItems() -> Results<ToDoItem> {
+        toDoItems = realm.objects(ToDoItem.self).filter("done = true").sorted(byKeyPath: "itemName", ascending: true)
+        return toDoItems!
+    }
+    
+    
+// MARK: Adding gradient color to cells
+    func addGradient(cell: TableViewCell, indexPath: IndexPath, color: UIColor){
         let calculation = CGFloat(indexPath.row) / 25
-        if let colour = UIColor(hexString: "5E5CE6").darkened(amount: calculation) as? UIColor {
+        if let colour = color.darkened(amount: calculation) as? UIColor {
             cell.backgroundColor = colour
+        }
+    }
+// MARK: Change item status
+    func changeItemStatus(item: ToDoItem){
+        do {
+            try realm.write {
+                item.done = !item.done
+            }
+        } catch {
+            print("Error saving task status, \(error)")
+        }
+    }
+
+// MARK: Delete the item
+    func delete(item: ToDoItem){
+        do {
+            try realm.write {
+                realm.delete(item)
+            }
+        } catch {
+            print("Error deleting item, \(error)")
         }
     }
     
