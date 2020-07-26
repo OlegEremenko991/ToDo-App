@@ -16,7 +16,7 @@ class MainViewModel {
     
     weak var view: MainVC?
     
-// MARK: - Methods to load and save items
+// MARK: Loading and saving items
     func loadItems() {
         toDoItems = realm.objects(ToDoItem.self).sorted(byKeyPath: "itemName", ascending: true)
         view!.tableView.reloadData()
@@ -45,10 +45,10 @@ class MainViewModel {
 // MARK: Adding gradient color to cells
     func addGradient(cell: TableViewCell, indexPath: IndexPath, color: UIColor){
         let calculation = CGFloat(indexPath.row) / 25
-        if let colour = color.darkened(amount: calculation) as? UIColor {
-            cell.backgroundColor = colour
-        }
+        let desiredColor = color.darkened(amount: calculation)
+        cell.backgroundColor = desiredColor
     }
+    
 // MARK: Change item status
     func changeItemStatus(item: ToDoItem){
         do {
@@ -76,7 +76,7 @@ class MainViewModel {
     func addToDoItem(){
         var textField = UITextField()
         let alert = UIAlertController(title: "Add a new task", message: "", preferredStyle: .alert)
-        let actionButton = UIAlertAction(title: "Save", style: .default) { action in
+        let saveAction = UIAlertAction(title: "Save", style: .default) { action in
             let newItem = ToDoItem()
             newItem.itemName = textField.text!
             self.saveToDoItem(toDoItem: newItem)
@@ -87,11 +87,12 @@ class MainViewModel {
         }
         
         alert.addAction(cancelButton)
-        alert.addAction(actionButton)
+        alert.addAction(saveAction)
         alert.addTextField { field in
             textField = field
-            textField.placeholder = "Enter a new task"
+            textField.placeholder = "Enter a title"
         }
+        
         view!.present(alert, animated: true)
     }
 }
