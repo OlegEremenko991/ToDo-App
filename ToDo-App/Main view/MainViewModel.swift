@@ -10,18 +10,26 @@ import UIKit
 import RealmSwift
 import DynamicColor
 
-class MainViewModel {
-    let realm = try! Realm()
-    var toDoItems: Results<ToDoItem>?
+final class MainViewModel {
+    
+// MARK: Public properties
     
     weak var view: MainVC?
     
-// MARK: Loading and saving items
+// MARK: Private properties
+
+    private let realm = try! Realm()
+    private var toDoItems: Results<ToDoItem>?
+    
+// MARK: Public methods
+    
+    // Load items
     func loadItems() {
         toDoItems = realm.objects(ToDoItem.self).sorted(byKeyPath: "itemName", ascending: true)
         view!.tableView.reloadData()
     }
     
+    // Save an item
     func saveToDoItem(toDoItem: ToDoItem) {
         try! realm.write {
             realm.add(toDoItem)
@@ -29,27 +37,27 @@ class MainViewModel {
         view!.tableView.reloadData()
     }
     
-// MARK: Get an array of active items
+    // Get an array of active items
     func activeItems() -> Results<ToDoItem> {
         toDoItems = realm.objects(ToDoItem.self).filter("done = false").sorted(byKeyPath: "itemName",ascending: true)
         return toDoItems!
     }
     
-// MARK: Get an array of completed items
+    // Get an array of completed items
     func completedItems() -> Results<ToDoItem> {
         toDoItems = realm.objects(ToDoItem.self).filter("done = true").sorted(byKeyPath: "itemName", ascending: true)
         return toDoItems!
     }
     
     
-// MARK: Adding gradient color to cells
-    func addGradient(cell: TableViewCell, indexPath: IndexPath, color: UIColor){
+    // Add gradient color to cells
+    func addGradient(cell: ItemCell, indexPath: IndexPath, color: UIColor){
         let calculation = CGFloat(indexPath.row) / 25
         let desiredColor = color.darkened(amount: calculation)
         cell.backgroundColor = desiredColor
     }
     
-// MARK: Change item status
+    // Change item status
     func changeItemStatus(item: ToDoItem){
         do {
             try realm.write {
@@ -60,7 +68,7 @@ class MainViewModel {
         }
     }
 
-// MARK: Delete the item
+    // Delete the item
     func delete(item: ToDoItem){
         do {
             try realm.write {
@@ -71,8 +79,7 @@ class MainViewModel {
         }
     }
     
-// MARK: - Pop-up alert
-    
+    // Pop-up alert
     func addToDoItem(){
         var textField = UITextField()
         let alert = UIAlertController(title: "Add a new task", message: "", preferredStyle: .alert)
