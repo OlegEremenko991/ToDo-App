@@ -58,6 +58,15 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		67D840BD251CA19E00599B3E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				67F3F2B6249F2E94009B87ED /* Main.storyboard */,
+				67F3F2BB249F2E97009B87ED /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		67F3F2A4249F2E94009B87ED = {
 			isa = PBXGroup;
 			children = (
@@ -80,9 +89,8 @@
 				67D840B7251C9ED700599B3E /* App */,
 				67F3F2CD249F34BD009B87ED /* Model */,
 				67F3F2CF249F34D2009B87ED /* Main view */,
+				67D840BD251CA19E00599B3E /* Storyboard */,
 				67F3F2B9249F2E97009B87ED /* Assets.xcassets */,
-				67F3F2B6249F2E94009B87ED /* Main.storyboard */,
-				67F3F2BB249F2E97009B87ED /* LaunchScreen.storyboard */,
 				67F3F2BE249F2E97009B87ED /* Info.plist */,
 			);
 			path = "ToDo-App";

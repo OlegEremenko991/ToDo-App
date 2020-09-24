@@ -49,7 +49,6 @@ final class MainViewModel {
         return toDoItems!
     }
     
-    
     // Add gradient color to cells
     func addGradient(cell: ItemCell, indexPath: IndexPath, color: UIColor){
         let calculation = CGFloat(indexPath.row) / 25
