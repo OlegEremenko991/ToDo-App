@@ -12,24 +12,22 @@ import DynamicColor
 
 final class MainViewModel {
     
-// MARK: Public properties
+    // MARK: - Public properties
     
     weak var view: MainVC?
     
-// MARK: Private properties
+    // MARK: - Private properties
 
     private let realm = try! Realm()
     private var toDoItems: Results<ToDoItem>?
     
-// MARK: Public methods
-    
-    // Load items
+    // MARK: - Public methods
+
     func loadItems() {
         toDoItems = realm.objects(ToDoItem.self).sorted(byKeyPath: "itemName", ascending: true)
         view!.tableView.reloadData()
     }
-    
-    // Save an item
+
     func saveToDoItem(toDoItem: ToDoItem) {
         try! realm.write {
             realm.add(toDoItem)
@@ -37,26 +35,23 @@ final class MainViewModel {
         view!.tableView.reloadData()
     }
     
-    // Get an array of active items
+    /// Get an array of active items
     func activeItems() -> Results<ToDoItem> {
-        toDoItems = realm.objects(ToDoItem.self).filter("done = false").sorted(byKeyPath: "itemName",ascending: true)
-        return toDoItems!
+        realm.objects(ToDoItem.self).filter("done = false").sorted(byKeyPath: "itemName",ascending: true)
     }
     
-    // Get an array of completed items
+    /// Get an array of completed items
     func completedItems() -> Results<ToDoItem> {
-        toDoItems = realm.objects(ToDoItem.self).filter("done = true").sorted(byKeyPath: "itemName", ascending: true)
-        return toDoItems!
+        realm.objects(ToDoItem.self).filter("done = true").sorted(byKeyPath: "itemName", ascending: true)
     }
     
-    // Add gradient color to cells
+    /// Add gradient color to cells
     func addGradient(cell: ItemCell, indexPath: IndexPath, color: UIColor){
         let calculation = CGFloat(indexPath.row) / 25
         let desiredColor = color.darkened(amount: calculation)
         cell.backgroundColor = desiredColor
     }
-    
-    // Change item status
+
     func changeItemStatus(item: ToDoItem){
         do {
             try realm.write {
@@ -67,7 +62,6 @@ final class MainViewModel {
         }
     }
 
-    // Delete the item
     func delete(item: ToDoItem){
         do {
             try realm.write {
@@ -78,7 +72,7 @@ final class MainViewModel {
         }
     }
     
-    // Pop-up alert
+    /// Pop-up alert
     func addToDoItem(){
         var textField = UITextField()
         let alert = UIAlertController(title: "Add a new task", message: "", preferredStyle: .alert)
@@ -98,7 +92,6 @@ final class MainViewModel {
             textField = field
             textField.placeholder = "Enter a title"
         }
-        
         view!.present(alert, animated: true)
     }
 }

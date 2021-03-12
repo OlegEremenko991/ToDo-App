@@ -10,26 +10,26 @@ import UIKit
 
 final class MainVC: UIViewController {
 
-// MARK: IBOutlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
     
-// MARK: Public properties
+    // MARK: - Public properties
 
     var viewModel: MainViewModel?
     
-// MARK: Private properties
+    // MARK: - Private properties
     
     private let tableViewSections = ["Active", "Completed"]
     
-// MARK: Lifecycle
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewModel()
     }
     
-// MARK: Private methods
+    // MARK: - Private methods
     
     private func setupViewModel(){
         viewModel = MainViewModel.init()
@@ -37,7 +37,7 @@ final class MainVC: UIViewController {
         viewModel?.loadItems()
     }
     
-// MARK: IBActions
+    // MARK: - IBActions
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         viewModel?.addToDoItem()
@@ -45,19 +45,16 @@ final class MainVC: UIViewController {
     
 }
 
-// MARK: TableView DataSource and Delegate
+// MARK: - TableView DataSource and Delegate
 
 extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return tableViewSections.count
+        tableViewSections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return viewModel?.activeItems().count ?? 0
-        }
-        return viewModel?.completedItems().count ?? 0
+        section == 0 ? viewModel?.activeItems().count ?? 0 : viewModel?.completedItems().count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,13 +64,13 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
             cell.itemNameLabel.text = item.itemName
             cell.accessoryType = item.done ? .checkmark : .none
             cell.tintColor = .yellow
-            
-            if indexPath.section == 0 {
-                viewModel?.addGradient(cell: cell, indexPath: indexPath, color: .systemIndigo)
-            } else {
-                viewModel?.addGradient(cell: cell, indexPath: indexPath, color: .blue)
-            }
-    
+
+            indexPath.section == 0 ? viewModel?.addGradient(cell: cell,
+                                                            indexPath: indexPath,
+                                                            color: .systemIndigo)
+                                   : viewModel?.addGradient(cell: cell,
+                                                            indexPath: indexPath,
+                                                            color: .blue)
         } else {
             cell.itemNameLabel.text = "No tasks added yet"
         }
